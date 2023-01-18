@@ -9,3 +9,9 @@ add_executable( loadDisplaySave src/chapter1/loadDisplaySave.cpp )
 target_link_libraries( loadDisplaySave ${OpenCV_LIBS} )
 #target_link_libraries( mat ${OpenCV_LIBS} )
 #target_link_libraries( logo ${OpenCV_LIBS} )
+
+# copy required images to every directory with executable
+SET (IMAGES ${CMAKE_SOURCE_DIR}/images/puppy.bmp ${CMAKE_SOURCE_DIR}/images/smalllogo.png)
+FILE(COPY ${IMAGES} DESTINATION .)
+FILE(COPY ${IMAGES} DESTINATION "Debug")
+FILE(COPY ${IMAGES} DESTINATION "Release")

@@ -11,7 +11,7 @@ using namespace cv;
 
 int main()
 {
-    Mat image= cv::imread("../../images/puppy.bmp",IMREAD_GRAYSCALE); // read an input image
+    Mat image= cv::imread("puppy.bmp",IMREAD_GRAYSCALE); // read an input image
 	cout << "This image has " << image.channels() << " channel(s)";
 	if (image.empty()) { // error handling
 	// no image has been created...
