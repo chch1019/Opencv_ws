@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/chaitu/workspace/Opencv_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named mat
+
+# Build rule for target.
+mat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mat
+.PHONY : mat
+
+# fast build rule for target.
+mat/fast:
+	$(MAKE) -f CMakeFiles/mat.dir/build.make CMakeFiles/mat.dir/build
+.PHONY : mat/fast
 
 #=============================================================================
 # Target rules for targets named loadDisplaySave
@@ -150,18 +163,49 @@ src/chapter1/loadDisplaySave.cpp.s:
 	$(MAKE) -f CMakeFiles/loadDisplaySave.dir/build.make CMakeFiles/loadDisplaySave.dir/src/chapter1/loadDisplaySave.cpp.s
 .PHONY : src/chapter1/loadDisplaySave.cpp.s
 
+src/chapter1/mat.o: src/chapter1/mat.cpp.o
+
+.PHONY : src/chapter1/mat.o
+
+# target to build an object file
+src/chapter1/mat.cpp.o:
+	$(MAKE) -f CMakeFiles/mat.dir/build.make CMakeFiles/mat.dir/src/chapter1/mat.cpp.o
+.PHONY : src/chapter1/mat.cpp.o
+
+src/chapter1/mat.i: src/chapter1/mat.cpp.i
+
+.PHONY : src/chapter1/mat.i
+
+# target to preprocess a source file
+src/chapter1/mat.cpp.i:
+	$(MAKE) -f CMakeFiles/mat.dir/build.make CMakeFiles/mat.dir/src/chapter1/mat.cpp.i
+.PHONY : src/chapter1/mat.cpp.i
+
+src/chapter1/mat.s: src/chapter1/mat.cpp.s
+
+.PHONY : src/chapter1/mat.s
+
+# target to generate assembly for a file
+src/chapter1/mat.cpp.s:
+	$(MAKE) -f CMakeFiles/mat.dir/build.make CMakeFiles/mat.dir/src/chapter1/mat.cpp.s
+.PHONY : src/chapter1/mat.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... mat"
 	@echo "... loadDisplaySave"
 	@echo "... src/chapter1/loadDisplaySave.o"
 	@echo "... src/chapter1/loadDisplaySave.i"
 	@echo "... src/chapter1/loadDisplaySave.s"
+	@echo "... src/chapter1/mat.o"
+	@echo "... src/chapter1/mat.i"
+	@echo "... src/chapter1/mat.s"
 .PHONY : help
 
 
