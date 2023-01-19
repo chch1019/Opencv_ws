@@ -1,4 +1,5 @@
 /home/chaitu/workspace/Opencv_ws/build/CMakeFiles/edit_cache.dir
 /home/chaitu/workspace/Opencv_ws/build/CMakeFiles/rebuild_cache.dir
+/home/chaitu/workspace/Opencv_ws/build/CMakeFiles/logo.dir
 /home/chaitu/workspace/Opencv_ws/build/CMakeFiles/mat.dir
 /home/chaitu/workspace/Opencv_ws/build/CMakeFiles/loadDisplaySave.dir

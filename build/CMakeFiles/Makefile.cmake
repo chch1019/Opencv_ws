@@ -51,6 +51,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/logo.dir/DependInfo.cmake"
   "CMakeFiles/mat.dir/DependInfo.cmake"
   "CMakeFiles/loadDisplaySave.dir/DependInfo.cmake"
   )

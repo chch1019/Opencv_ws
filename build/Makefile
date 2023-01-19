@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named logo
+
+# Build rule for target.
+logo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 logo
+.PHONY : logo
+
+# fast build rule for target.
+logo/fast:
+	$(MAKE) -f CMakeFiles/logo.dir/build.make CMakeFiles/logo.dir/build
+.PHONY : logo/fast
+
+#=============================================================================
 # Target rules for targets named mat
 
 # Build rule for target.
@@ -163,6 +176,33 @@ src/chapter1/loadDisplaySave.cpp.s:
 	$(MAKE) -f CMakeFiles/loadDisplaySave.dir/build.make CMakeFiles/loadDisplaySave.dir/src/chapter1/loadDisplaySave.cpp.s
 .PHONY : src/chapter1/loadDisplaySave.cpp.s
 
+src/chapter1/logo.o: src/chapter1/logo.cpp.o
+
+.PHONY : src/chapter1/logo.o
+
+# target to build an object file
+src/chapter1/logo.cpp.o:
+	$(MAKE) -f CMakeFiles/logo.dir/build.make CMakeFiles/logo.dir/src/chapter1/logo.cpp.o
+.PHONY : src/chapter1/logo.cpp.o
+
+src/chapter1/logo.i: src/chapter1/logo.cpp.i
+
+.PHONY : src/chapter1/logo.i
+
+# target to preprocess a source file
+src/chapter1/logo.cpp.i:
+	$(MAKE) -f CMakeFiles/logo.dir/build.make CMakeFiles/logo.dir/src/chapter1/logo.cpp.i
+.PHONY : src/chapter1/logo.cpp.i
+
+src/chapter1/logo.s: src/chapter1/logo.cpp.s
+
+.PHONY : src/chapter1/logo.s
+
+# target to generate assembly for a file
+src/chapter1/logo.cpp.s:
+	$(MAKE) -f CMakeFiles/logo.dir/build.make CMakeFiles/logo.dir/src/chapter1/logo.cpp.s
+.PHONY : src/chapter1/logo.cpp.s
+
 src/chapter1/mat.o: src/chapter1/mat.cpp.o
 
 .PHONY : src/chapter1/mat.o
@@ -198,11 +238,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... logo"
 	@echo "... mat"
 	@echo "... loadDisplaySave"
 	@echo "... src/chapter1/loadDisplaySave.o"
 	@echo "... src/chapter1/loadDisplaySave.i"
 	@echo "... src/chapter1/loadDisplaySave.s"
+	@echo "... src/chapter1/logo.o"
+	@echo "... src/chapter1/logo.i"
+	@echo "... src/chapter1/logo.s"
 	@echo "... src/chapter1/mat.o"
 	@echo "... src/chapter1/mat.i"
 	@echo "... src/chapter1/mat.s"
